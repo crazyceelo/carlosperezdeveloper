@@ -12,7 +12,6 @@ module.exports = (
             <Navbar />
                 <Switch>
                     <Route path="/" component={Home} />
-                    <Route path="/aboutme" component={AboutMe} /> 
                 </Switch>
         </div>
     </HashRouter>
