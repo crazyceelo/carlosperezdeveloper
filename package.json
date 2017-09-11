@@ -1,0 +1,23 @@
+{
+  "name": "carlosperezdeveloper",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "portfolio",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazyceelo/carlosperezdeveloper.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Carlos Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crazyceelo/carlosperezdeveloper/issues"
+  },
+  "homepage": "https://github.com/crazyceelo/carlosperezdeveloper#readme"
+}
