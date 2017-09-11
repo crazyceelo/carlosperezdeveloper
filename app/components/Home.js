@@ -10,9 +10,15 @@ export default class Home extends React.Component {
     
     render(){
         return(
-            <div className="row">
-                <Project1 />
-                <Project2 />
+            <div>
+                <div className="row">
+                    <div className="col">
+                        <Project1 />
+                    </div>
+                </div>
+                <div>
+                    <Project2 />
+                </div>
             </div>
         )
     }
