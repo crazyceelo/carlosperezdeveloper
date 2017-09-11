@@ -8,12 +8,12 @@ export default class Project1 extends React.Component {
         return(
         <div>
             <div >
-                <div >
+                <br />
                     <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         Project 1
                     </button>
-                </div>
             </div>
+                <br />
                 <div className="collapse" id="collapseExample">
                     <div className="card card-body">
                         <div id="accordion" role="tablist">
