@@ -19,17 +19,17 @@ app.use(express.static("public"));
 
 // MongoDB configuration
 // mongoose.connect("mongodb://localhost/personal-trainer-app");
-var uri = 
+var uriString = 
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
 "mongodb://localhost/carlosperezdeveloper";
 
-mongoose.connect(uri, function(err, res){
+mongoose.connect(uriString, function(err, res){
     if (err){
-        console.log("error connecting to: " + uri +". "+ err);
+        console.log("error connecting to: " + uriString +". "+ err);
     }
     else{
-        console.log("succeeded connected to: " + uri);
+        console.log("succeeded connected to: " + uriString);
     }
 });
 
@@ -44,7 +44,8 @@ db.once("open", function(){
     console.log("Mongoose connection successful.");
 })
 
-routes(app);
+// this is for api-routes
+// routes(app);
 
 app.listen(PORT, function(){
     console.log("App listening on PORT: " + PORT);
