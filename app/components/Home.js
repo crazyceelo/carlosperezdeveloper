@@ -10,7 +10,7 @@ export default class Home extends React.Component {
     
     render(){
         return(
-            <div className="row justify-content-start">
+            <div className="row">
                 <Project1 />
                 <Project2 />
             </div>

@@ -6,7 +6,7 @@ export default class Projects extends React.Component {
 
     render(){
         return(
-            <div className="col-2">
+            <div className="col">
                 <a className="navbar-brand" href="#">Projects</a>
             </div>
         )
