@@ -10,9 +10,11 @@ export default class Navbar extends React.Component {
 
     render(){
         return(
-            <nav className="container navbar navbar-expand-lg navbar-light bg-light">
-                <Projects />
-                <AboutMe />
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container">
+                    <Projects />
+                    <AboutMe />
+                </div>
             </nav>
         )
     }
