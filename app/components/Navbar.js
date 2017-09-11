@@ -6,7 +6,9 @@ export default class Navbar extends React.Component {
 
     render(){
         return(
-            <h1>test</h1>
+            <nav className="navbar navbar-dark bg-dark">
+                
+            </nav>
         )
     }
 }
