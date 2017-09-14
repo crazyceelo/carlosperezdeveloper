@@ -13,7 +13,7 @@ export default class Home extends React.Component {
         return(
             <div className="container">
                 <div className="row">
-                    <div className="col">
+                    <div className="col-12">
                         <Route path="/aboutme" component={AboutMe} />
                         <Route path="/projects" component={Project1} />
                     </div>
