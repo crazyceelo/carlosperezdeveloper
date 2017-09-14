@@ -6,12 +6,12 @@ export default class Collapse1 extends React.Component {
     render(){
         return(
           <div className="row collapsRow">
-              <div className="col-12" id="collapseExample" role="tablist">
+              <div className="col-12" id="collapseExample2" role="tablist">
                 <div className="card">
                   <div className="card-header" role="tab" id="headingOne">
                     <h5 className="mb-0">
                       <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Collapsible Group Item #1
+                        Collapsible Group Item #222
                       </a>
                     </h5>
                   </div>
