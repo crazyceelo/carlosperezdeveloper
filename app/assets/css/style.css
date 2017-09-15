@@ -16,3 +16,16 @@ html, body {
 .collapsRow{
     width: 100%;
 }
+
+.cookBookBackground {
+    background-image: url("../images/cookBookBackground.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+}
+
+.backgroundColor{
+    background: rgba(249, 252, 252, 0.5);
+}
