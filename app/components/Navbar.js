@@ -13,8 +13,8 @@ export default class Navbar extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
                     <div className="row">
-                        <Projects />
                         <AboutMe />
+                        <Projects />
                     </div>
                 </div>
             </nav>
