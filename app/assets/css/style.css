@@ -1,4 +1,4 @@
-html, body {
+body {
     background-image: url("../images/background.jpg");
     background-size: cover;
     height: auto;
@@ -6,6 +6,7 @@ html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
+    margin-top: 60px;
 }
 
 .profileBackground {
@@ -28,4 +29,13 @@ html, body {
 
 .backgroundColor{
     background: rgba(249, 252, 252, 0.5);
+}
+
+.aboutMeBackground {
+    background-image: url("../images/aboutMeBackground.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-size: cover;
 }
