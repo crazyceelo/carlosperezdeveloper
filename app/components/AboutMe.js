@@ -2,6 +2,8 @@ var React = require("react");
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import profileBackground from "../assets/images/profileBackground.jpg";
 import linkedInLogo from "../assets/images/linkedInLogo.png";
+import gitHubLogo from "../assets/images/gitHubLogo.png";
+import stackOverflowLogo from "../assets/images/stackOverflowLogo.png";
 
 export default class AboutMe extends React.Component {
     
@@ -26,12 +28,17 @@ export default class AboutMe extends React.Component {
                     <ul id="links">
                       <li>
                         <a className="" href="https://www.linkedin.com/in/carlos-perez-b091454/" target="_blank">
-                          <img src={linkedInLogo} alt="Linked in logo" className="imageLinks"/>
+                          <img src={linkedInLogo} alt="Linked-in logo" className="imageLinks"/>
                         </a>
                       </li>
                       <li>
-                        <a className="" href="https://www.linkedin.com/in/carlos-perez-b091454/" target="_blank">
-                          <img src={linkedInLogo} alt="Linked in logo" className="imageLinks"/>
+                        <a className="" href="https://github.com/crazyceelo" target="_blank">
+                          <img src={gitHubLogo} alt="Github logo" className="imageLinks"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a className="" href="https://stackoverflow.com/users/7455526/carlos-perez" target="_blank">
+                          <img src={stackOverflowLogo} alt="Stack Overflow logo" className="imageLinks"/>
                         </a>
                       </li>
                     </ul>
