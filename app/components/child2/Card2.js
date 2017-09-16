@@ -25,22 +25,20 @@ export default class Card2 extends React.Component {
                         <div className="border backgroundColor">
                             <h5 className="card-body text-center">Description</h5>
                             <div className="row">
-                                <p className="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry 
-                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard 
-                                    dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf 
-                                    moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
-                                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore 
-                                    wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
-                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic 
-                                    synth nesciunt you probably haven't heard of them accusamus labore 
-                                    sustainable VHS.
+                                <p className="card-body">Spot me is web site where a user can view independent
+                                    personal trainers with specific specializations in your local area using a
+                                    Zip Code. Users can search for any type of trainer and book them for a time,
+                                    date, and place in order to start getting healthy and fit. This robust platform
+                                    gives personal trainers and users more options that expand far beyond what any
+                                    gym can offer. This is meant to be dynamic and custom for both the trainer 
+                                    and the trainee. 
                                 </p>
                             </div>
                         </div>
                         <br />
                         <div className="border backgroundColor">
                             <h5 className="card-body text-center">Technology</h5>
-                            <p className="card-body">asdfasdfasdfasdaf asdf asdfasdf </p>
+                            <p className="card-body">MongoDB, Express, React, Node.js, Bootstrap, CSS </p>
                         </div>
                     </div>
                 </div>

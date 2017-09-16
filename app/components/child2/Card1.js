@@ -25,22 +25,24 @@ export default class Card1 extends React.Component {
                         <div className="border backgroundColor">
                             <h5 className="card-body text-center">Description</h5>
                             <div className="row">
-                                <p className="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry 
-                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard 
-                                    dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf 
-                                    moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
-                                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore 
-                                    wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
-                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic 
-                                    synth nesciunt you probably haven't heard of them accusamus labore 
-                                    sustainable VHS.
+                                <p className="card-body">The Cook Book application makes it easy to
+                                    enter customer recipe's and save them to your account. Other members
+                                    can view your recipe's or create their own. This application is simple
+                                    to use and is not riddled with menu's upon menu's. It is not required
+                                    to be exact with measurements. 
+                                </p>
+                                <p className="card-body">
+                                    The specific attribute that sets this recipe application apart from
+                                    rest is that it sums up and displays nutritional values based on your
+                                    uniquely created custom recipe. Each ingredient is calculated and displayed
+                                    via a pie chart. 
                                 </p>
                             </div>
                         </div>
                         <br />
                         <div className="border backgroundColor">
                             <h5 className="card-body text-center">Technology</h5>
-                            <p className="card-body">asdfasdfasdfasdaf asdf asdfasdf </p>
+                            <p className="card-body">HTML, CSS, Handlebars, MySQL, Node.js, Express, API </p>
                         </div>
                     </div>
                 </div>
