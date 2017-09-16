@@ -18,7 +18,7 @@ export default class Card2 extends React.Component {
                         <div className="border border-light backgroundColor">
                             <h5 className="card-body text-center">Link</h5>
                             <div className="text-center">
-                                <a href="#/projects"> Click here to go to the web site</a>
+                                <a href="https://personal-trainer-apps.herokuapp.com/" target="_blank"> Click here to go to the web site</a>
                             </div>
                         </div>
                         <br />
