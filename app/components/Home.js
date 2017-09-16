@@ -2,7 +2,7 @@ var React = require("react");
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 // import components
-import Project1 from "./child1/Project1";
+import ProjectPage from "./child1/ProjectPage";
 import AboutMe from "./AboutMe";
 
 
@@ -14,7 +14,7 @@ export default class Home extends React.Component {
                 <div className="row">
                     <div className="col-12">
                         <Route exact path="/" component={AboutMe} />     
-                        <Route path="/projects" component={Project1} />
+                        <Route path="/projects" component={ProjectPage} />
                     </div>
                 </div>
             </div>
