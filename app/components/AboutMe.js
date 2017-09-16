@@ -4,6 +4,8 @@ import profileBackground from "../assets/images/profileBackground.jpg";
 import linkedInLogo from "../assets/images/linkedInLogo.png";
 import gitHubLogo from "../assets/images/gitHubLogo.png";
 import stackOverflowLogo from "../assets/images/stackOverflowLogo.png";
+import resumeLogo from "../assets/images/resumeLogo.png";
+import resume from "../assets/documents/resume.pdf";
 
 export default class AboutMe extends React.Component {
     
@@ -41,6 +43,11 @@ export default class AboutMe extends React.Component {
                       <li>
                         <a className="" href="https://stackoverflow.com/users/7455526/carlos-perez" target="_blank">
                           <img src={stackOverflowLogo} alt="Stack Overflow logo" className="imageLinks"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a className="" href={resume} download>
+                          <img src={resumeLogo} alt="Resume logo" className="imageLinks"/>
                         </a>
                       </li>
                     </ul>
