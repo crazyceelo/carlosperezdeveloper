@@ -1,6 +1,7 @@
 var React = require("react");
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import profileBackground from "../assets/images/profileBackground.jpg";
+import linkedInLogo from "../assets/images/linkedInLogo.png";
 
 export default class AboutMe extends React.Component {
     
@@ -21,7 +22,20 @@ export default class AboutMe extends React.Component {
                 </div>
               </div>
                 <div className="card-footer text-muted">
-                  link icon, link icon, link icon
+                  <div className="flex-lg-row d-flex justify-content-center">
+                    <ul id="links">
+                      <li>
+                        <a className="" href="https://www.linkedin.com/in/carlos-perez-b091454/" target="_blank">
+                          <img src={linkedInLogo} alt="Linked in logo" className="imageLinks"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a className="" href="https://www.linkedin.com/in/carlos-perez-b091454/" target="_blank">
+                          <img src={linkedInLogo} alt="Linked in logo" className="imageLinks"/>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
