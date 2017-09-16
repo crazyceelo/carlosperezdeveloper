@@ -14,7 +14,7 @@ export default class Card2 extends React.Component {
                 </h5>
                 </div>
                 <div id="collapseTwo" className="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div className="card-body cookBookBackground">
+                    <div className="card-body spotMeBackground">
                         <div className="border border-light backgroundColor">
                             <h5 className="card-body text-center">Link</h5>
                             <div className="text-center">
