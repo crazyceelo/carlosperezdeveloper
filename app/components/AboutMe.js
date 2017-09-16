@@ -22,9 +22,14 @@ export default class AboutMe extends React.Component {
                 <img className="d-flex align-self-start mr-3 profileBackground rounded-circle" src={profileBackground} alt="Generic placeholder image" />
                 <div className="media-body backgroundColor">
                   <h4>Introduction</h4>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                  <p className="text-left card-body">I excel in creating ideas, and then making them happen. I believe a good developer
+                    should be able to do both back-end and front-end web develoment, which is precisely
+                    what I do. After I create an idea, I like to choose the tech needed, and then depending
+                    on the make-up of the team, I fill any front-end or back-end role needed. All in all, 
+                    I love conceptualizing ideas, constructing them, and watching them go. 
+                  </p>
                   <h4>Tech Skills</h4>
-                  <p>React, HTML, CSS, Javascript, C#, Selenium, Node.js, npm, MySQL, Jquery, RESTful API(AJAX), Express, Handlebars, MongoDB</p>
+                  <p className="text-left card-body">React, HTML, CSS, Javascript, C#, Selenium, Node.js, npm, MySQL, Jquery, RESTful API(AJAX), Express, Handlebars, MongoDB</p>
                 </div>
               </div>
                 <div className="card-footer text-muted">
