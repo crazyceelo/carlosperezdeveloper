@@ -18,7 +18,13 @@ export default class Card1 extends React.Component {
                         <div className="border border-light backgroundColor">
                             <h5 className="card-body text-center">Link</h5>
                             <div className="text-center">
-                                <a href="https://recipe-cookbook.herokuapp.com/" target="_blank"> Click here to go to the web site</a>
+                                <div>
+                                    <a href="https://recipe-cookbook.herokuapp.com/" target="_blank"> Click here to go to the web site</a>
+                                </div>
+                                <br />
+                                <div>
+                                <a href="https://github.com/randylam87/recipe-book" target="_blank"> Click here to view the project Github</a>
+                                </div>
                             </div>
                         </div>
                         <br />
