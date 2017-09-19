@@ -19,7 +19,7 @@ export default class Card3 extends React.Component {
                             <h5 className="card-body text-center">Link</h5>
                             <div className="text-center">
                                 <div>
-                                    <a href="https://crazyceelo.github.io/week-4-game/"> Click here to go to the web site</a>
+                                    <a href="https://crazyceelo.github.io/week-4-game/" target="_blank"> Click here to go to the web site</a>
                                 </div>
                                 <br />
                                 <div>
