@@ -15,7 +15,8 @@ export default class Project1 extends React.Component {
                 <br />
                 <Card1 />
                 <Card2 />
-                {/* <Card3 /> */}
+                <Card3 />
+                {/* <Card4 /> */}
                 </div>
                 
         )
