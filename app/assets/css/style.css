@@ -70,3 +70,7 @@ body {
   list-style-type: none;
   padding-right: 20px;
 }
+
+.whiteText {
+    color: white;
+}
