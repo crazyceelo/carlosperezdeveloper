@@ -17,6 +17,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 
 app.use(express.static("public"));
 
+// nodemailer configuration settings
+    // code
+
 // MongoDB configuration
 // mongoose.connect("mongodb://localhost/personal-trainer-app");
 var uriString = 
