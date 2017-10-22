@@ -2,7 +2,26 @@ var React = require('react');
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 export default class ContactForm extends React.Component {
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            value: ''
+        }
 
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+        console.log(value);
+    }
 
     render(){
         return(
@@ -27,7 +46,7 @@ export default class ContactForm extends React.Component {
                                 <div className="col-md-6">
                                     <div className="md-form">
                                         <div className="md-form">
-                                            <input type="text" id="name" name="name" className="form-control" />
+                                            <input type="text" id="name" name="name" className="form-control" onChange={this.handleChange}/>
                                             <label htmlFor="name" className="whiteText">Your name</label>
                                         </div>
                                     </div>
@@ -38,7 +57,7 @@ export default class ContactForm extends React.Component {
                                 <div className="col-md-6">
                                     <div className="md-form">
                                         <div className="md-form">
-                                            <input type="text" id="email" name="email" className="form-control" />
+                                            <input type="text" id="email" name="email" className="form-control" onChange={this.handleChange}/>
                                             <label htmlFor="email" className="whiteText">Your email</label>
                                         </div>
                                     </div>
@@ -52,7 +71,7 @@ export default class ContactForm extends React.Component {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="md-form">
-                                        <input type="text" id="subject" name="subject" className="form-control" />
+                                        <input type="text" id="subject" name="subject" className="form-control" onChange={this.handleChange}/>
                                         <label htmlFor="subject" className="whiteText">Subject</label>
                                     </div>
                                 </div>
@@ -66,7 +85,7 @@ export default class ContactForm extends React.Component {
                                 <div className="col-md-12">
             
                                     <div className="md-form">
-                                        <textarea type="text" id="message" name="message" className="form-control" rows="5"></textarea>
+                                        <textarea type="text" id="message" name="message" className="form-control" rows="5" onChange={this.handleChange}></textarea>
                                         <div>
                                             <label htmlFor="message" className="whiteText">Your message</label>
                                         </div>
