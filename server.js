@@ -23,18 +23,18 @@ app.use(express.static("public"));
 nodemailer.createTestAccount((err, account) => {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        secure: false, // true for 465, false for other ports
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
         auth: {
-            user: account.user, // generate ethereal user
-            pass: account.pass // generated ethereal password
+            user: 'solracias@gmail.com', // generate ethereal user
+            pass: 'Berserk101!' // generated ethereal password
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"test tester" <test@tester.com>', // sender address
+        from: '"test tester" <solracias@gmail.com>', // sender address
         to: 'solracias@gmail.com', // list of receivers. use comma to separate
         subject: 'Hello', // subject line
         text: 'Hello world!', // plain text body
@@ -42,20 +42,20 @@ nodemailer.createTestAccount((err, account) => {
     };
 
     // send mail with defined transport object
-    // transporter.sendMail(mailOptions, (error, info) => {
-    //     if (error){
-    //         return console.log(error);
-    //     }
-    //     else {
-    //         console.log('Message sent: %s', info.messageId);
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error){
+            return console.log(error);
+        }
+        else {
+            console.log('Message sent: ' + info.response);
             
-    //         // preview only available when sending through an Ethereal account
-    //         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+            // preview only available when sending through an Ethereal account
+            // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-    //         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
-    //         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    //     }
-    // });
+            // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
+            // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+        }
+    });
 });
 
 // MongoDB configuration
