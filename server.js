@@ -28,17 +28,17 @@ nodemailer.createTestAccount((err, account) => {
         secure: true, // true for 465, false for other ports
         auth: {
             user: 'solracias@gmail.com', // generate ethereal user
-            pass: 'Berserk101!' // generated ethereal password
+            pass: 'kpsetqeqpezbrnee' // generated ethereal password
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"test tester" <solracias@gmail.com>', // sender address
+        from: '"john Doe" <solracias123@gmail.com>', // sender address
         to: 'solracias@gmail.com', // list of receivers. use comma to separate
-        subject: 'Hello', // subject line
+        subject: 'test email', // subject line
         text: 'Hello world!', // plain text body
-        html: '<b>Hellow world!</b>' // html body
+        html: '<b>Hellow world! and stuff</b>' // html body
     };
 
     // send mail with defined transport object
