@@ -1,10 +1,11 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
-var mongoose = require("mongoose");
-var routes = require("./config/api-routes");
-var http = require ('http');
+const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+const mongoose = require("mongoose");
+const routes = require("./config/api-routes");
+const http = require ('http');
 const nodemailer = require('nodemailer');
+const request = require("request");
 
 // Server configuration
 var app = express();
@@ -21,7 +22,7 @@ app.use(express.static("public"));
 // nodemailer configuration settings
 // Generate test SMTP service account from ethereal.email
 nodemailer.createTestAccount((err, account) => {
-    // create reusable transporter object using the default SMTP transport
+    // create gmail reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -57,6 +58,9 @@ nodemailer.createTestAccount((err, account) => {
         }
     });
 });
+
+// local Dependencies
+const api = require('./routes/api')(express,db,request,transporter)
 
 // MongoDB configuration
 // mongoose.connect("mongodb://localhost/personal-trainer-app");
