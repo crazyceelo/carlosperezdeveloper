@@ -21,46 +21,22 @@ app.use(express.static("public"));
 
 // nodemailer configuration settings
 // Generate test SMTP service account from ethereal.email
-nodemailer.createTestAccount((err, account) => {
-    // create gmail reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: 'solracias@gmail.com', // generate ethereal user
-            pass: 'kpsetqeqpezbrnee' // generated ethereal password
-        }
-    });
-
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: '"john Doe" <solracias123@gmail.com>', // sender address
-        to: 'solracias@gmail.com', // list of receivers. use comma to separate
-        subject: 'test email', // subject line
-        text: 'Hello world!', // plain text body
-        html: '<b>Hellow world! and stuff</b>' // html body
-    };
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error){
-            return console.log(error);
-        }
-        else {
-            console.log('Message sent: ' + info.response);
-            
-            // preview only available when sending through an Ethereal account
-            // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-            // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
-            // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-        }
-    });
+// create gmail reusable transporter object using the default SMTP transport
+const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+        user: 'solracias@gmail.com', // gmail user name.
+        pass: 'kpsetqeqpezbrnee' // gmail pass key. not the actual password.
+    }
 });
 
-// local Dependencies
-const api = require('./routes/api')(express,db,request,transporter)
+// local Dependencies. passing variables to a different file.
+// const api = require('./config/api-routes')(express,db,request,transporter);
+
+// configure express to handle all api routes here.
+// app.use('/api', api);
 
 // MongoDB configuration
 // mongoose.connect("mongodb://localhost/personal-trainer-app");
@@ -90,7 +66,7 @@ db.once("open", function(){
 })
 
 // this is for api-routes
-// routes(app);
+routes(app, transporter);
 
 app.listen(PORT, function(){
     console.log("App listening on PORT: " + PORT);

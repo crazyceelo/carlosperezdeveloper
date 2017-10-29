@@ -1,5 +1,6 @@
 var React = require('react');
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import helper from '../utils/helper';
 
 export default class ContactForm extends React.Component {
     constructor(props){
@@ -34,6 +35,12 @@ export default class ContactForm extends React.Component {
         console.log(`email: ${this.state.email}`);
         console.log(`subject: ${this.state.subject}`);
         console.log(`message: ${this.state.message}`);
+        helper.postContactForm(
+            this.state.name,
+            this.state.email,
+            this.state.subject,
+            this.state.message
+        )
     }
 
     render(){
