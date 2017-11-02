@@ -26,7 +26,7 @@ export default class ContactForm extends React.Component {
         this.setState({
             [name]: value
         });
-        console.log(value);
+        // console.log(value);
     }
 
     handleSubmit(event) {
@@ -35,11 +35,37 @@ export default class ContactForm extends React.Component {
         console.log(`email: ${this.state.email}`);
         console.log(`subject: ${this.state.subject}`);
         console.log(`message: ${this.state.message}`);
+        var contactData = {
+            name: this.state.name,
+            email: this.state.email,
+            subject: this.state.subject,
+            message: this.state.message,
+            captcha: grecaptcha.getResponse()
+        };
+        var name = this.state.name;
+        var email = this.state.email;
+        var subject = this.state.subject;
+        var message = this.state.message;
+        var captcha = grecaptcha.getResponse();
+        console.log(captcha);
+
+        $.ajax({
+            url: '/api-contact',
+            method: 'POST',
+            data: contactData,
+            success: ()=>{
+                grecaptcha.reset();
+            },
+            error: (response) => {
+                console.log(response.responseText);
+            }
+        });
+
         helper.postContactForm(
-            this.state.name,
-            this.state.email,
-            this.state.subject,
-            this.state.message
+            name,
+            email,
+            subject,
+            message
         )
     }
 
@@ -114,7 +140,7 @@ export default class ContactForm extends React.Component {
                                 </div>
                             </div>
                             {/* <!--Grid row--> */}
-                            <div className="g-recaptcha" data-sitekey="6Lf9WDYUAAAAAODejAe8kXb8sdhRlLRJRQBmMrLk"></div>
+                            <div className="g-recaptcha" data-sitekey="6Ld73DYUAAAAAGhdKMGC38lIq9Ou7buQsp7t0dGc"></div>
                             <br />
                             <div className="center-on-small-only">
                                 <input type="submit" value="Send" className="btn btn-primary" />

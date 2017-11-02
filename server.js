@@ -66,7 +66,7 @@ db.once("open", function(){
 })
 
 // this is for api-routes
-routes(app, transporter);
+routes(app, transporter, request);
 
 app.listen(PORT, function(){
     console.log("App listening on PORT: " + PORT);
