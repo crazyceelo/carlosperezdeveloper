@@ -140,7 +140,7 @@ export default class ContactForm extends React.Component {
                                 </div>
                             </div>
                             {/* <!--Grid row--> */}
-                            <div className="g-recaptcha" data-sitekey="6Ld73DYUAAAAAGhdKMGC38lIq9Ou7buQsp7t0dGc"></div>
+                            <div id="recaptcha" className="g-recaptcha" data-sitekey="6Ld73DYUAAAAAGhdKMGC38lIq9Ou7buQsp7t0dGc"></div>
                             <br />
                             <div className="center-on-small-only">
                                 <input type="submit" value="Send" className="btn btn-primary" />
