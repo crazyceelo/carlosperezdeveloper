@@ -18,20 +18,31 @@ export default class ContactForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount(){
+        document.body.id.remove('recaptcha_script');
+        jQuery('body > #recaptcha_script').remove();
+        jQuery('head > #recaptcha_script').remove();
+    }
+
     componentDidMount(){
+        // an array of key value pairs
         const scripts = [{
             src: 'https://www.google.com/recaptcha/api.js',
             type: 'text/javascript'
         }];
         
+
         scripts.forEach((source) => {
             const script = document.createElement('script');
             script.src = source.src;
             script.type = source.type;
-            script.id = 'recaptcha_script_style';
+            script.id = 'recaptcha_script';
             document.body.appendChild(script);
+            $("#recaptcha_script").append(source);
         })
     }
+
+    
 
     handleChange(event) {
         const target = event.target;
