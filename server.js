@@ -9,7 +9,7 @@ const request = require("request");
 
 // Server configuration
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 app.use(logger("dev"));
 app.use(bodyParser.json());

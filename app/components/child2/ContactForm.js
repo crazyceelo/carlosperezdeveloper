@@ -19,12 +19,11 @@ export default class ContactForm extends React.Component {
     }
 
     componentWillUnmount(){
-        document.body.id.remove('recaptcha_script');
         jQuery('body > #recaptcha_script').remove();
         jQuery('head > #recaptcha_script').remove();
     }
 
-    componentDidMount(){
+    componentWillMount(){
         // an array of key value pairs
         const scripts = [{
             src: 'https://www.google.com/recaptcha/api.js',
@@ -37,12 +36,9 @@ export default class ContactForm extends React.Component {
             script.src = source.src;
             script.type = source.type;
             script.id = 'recaptcha_script';
-            document.body.appendChild(script);
-            $("#recaptcha_script").append(source);
-        })
+            var stuff = document.body.appendChild(script);
+        });
     }
-
-    
 
     handleChange(event) {
         const target = event.target;
