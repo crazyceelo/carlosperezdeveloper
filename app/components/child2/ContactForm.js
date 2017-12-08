@@ -19,7 +19,18 @@ export default class ContactForm extends React.Component {
     }
 
     componentDidMount(){
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+        const scripts = [{
+            src: 'https://www.google.com/recaptcha/api.js',
+            type: 'text/javascript'
+        }];
+        
+        scripts.forEach((source) => {
+            const script = document.createElement('script');
+            script.src = source.src;
+            script.type = source.type;
+            script.id = 'recaptcha_script_style';
+            document.body.appendChild(script);
+        })
     }
 
     handleChange(event) {
