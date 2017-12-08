@@ -19,7 +19,7 @@ export default class ContactForm extends React.Component {
     }
 
     componentDidMount(){
-        // code
+        <script src="https://www.google.com/recaptcha/api.js"></script>
     }
 
     handleChange(event) {
