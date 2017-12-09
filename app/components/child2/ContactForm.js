@@ -73,7 +73,11 @@ export default class ContactForm extends React.Component {
         var captcha = grecaptcha.getResponse();
         console.log(captcha);
 
-        //front end validation
+        //Status code validation form process
+        $('.form-process').css('display', 'block');
+        // $('#contactstatus').css('color', '#00B4E2');
+        // $('.form-process').css('background-image', 'url("assets/css/images/preloader.gif")');
+        $('#contactstatus').text('Please wait, your message is being sent...');
 
 
         $.ajax({
@@ -116,7 +120,7 @@ export default class ContactForm extends React.Component {
                             <div className="row">
 
                                 {/* status code form process */}
-                                <div className="form-process"><span id="contactstatus"></span></div>
+                                <div className="form-process align-items-center"><h4 id="contactstatus"></h4></div>
 
                                 {/* <!--Grid column--> */}
                                 <div className="col-md-6">
