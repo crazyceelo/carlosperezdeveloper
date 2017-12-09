@@ -30,7 +30,8 @@ export default class ContactForm extends React.Component {
             type: 'text/javascript'
         }];
         
-
+        // goes through each object puts it in the script tag and then 
+        // mounts to the body
         scripts.forEach((source) => {
             const script = document.createElement('script');
             script.src = source.src;
@@ -71,6 +72,9 @@ export default class ContactForm extends React.Component {
         var message = this.state.message;
         var captcha = grecaptcha.getResponse();
         console.log(captcha);
+
+        //front end validation
+
 
         $.ajax({
             url: '/api-contact',
@@ -115,7 +119,7 @@ export default class ContactForm extends React.Component {
                                 <div className="col-md-6">
                                     <div className="md-form">
                                         <div className="md-form">
-                                            <input type="text" id="name" name="name" value={this.state.name} className="form-control" onChange={this.handleChange}/>
+                                            <input type="text" id="name" name="name" value={this.state.name} className="form-control" onChange={this.handleChange} required />
                                             <label htmlFor="name" className="whiteText">Your name</label>
                                         </div>
                                     </div>
@@ -126,7 +130,7 @@ export default class ContactForm extends React.Component {
                                 <div className="col-md-6">
                                     <div className="md-form">
                                         <div className="md-form">
-                                            <input type="text" id="email" name="email" value={this.state.email} className="form-control" onChange={this.handleChange}/>
+                                            <input type="email" id="email" name="email" value={this.state.email} className="form-control" onChange={this.handleChange} required/>
                                             <label htmlFor="email" className="whiteText">Your email</label>
                                         </div>
                                     </div>
@@ -140,7 +144,7 @@ export default class ContactForm extends React.Component {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="md-form">
-                                        <input type="text" id="subject" name="subject" value={this.state.subject} className="form-control" onChange={this.handleChange}/>
+                                        <input type="text" id="subject" name="subject" value={this.state.subject} className="form-control" onChange={this.handleChange} required/>
                                         <label htmlFor="subject" className="whiteText">Subject</label>
                                     </div>
                                 </div>
@@ -154,7 +158,7 @@ export default class ContactForm extends React.Component {
                                 <div className="col-md-12">
             
                                     <div className="md-form">
-                                        <textarea type="text" id="message" name="message" value={this.state.message} className="form-control" rows="5" onChange={this.handleChange}></textarea>
+                                        <textarea type="text" id="message" name="message" value={this.state.message} className="form-control" rows="5" onChange={this.handleChange} required></textarea>
                                         <div>
                                             <label htmlFor="message" className="whiteText">Your message</label>
                                         </div>
