@@ -23,7 +23,7 @@ export default class ContactForm extends React.Component {
         jQuery('head > #recaptcha_script').remove();
     }
 
-    componentWillMount(){
+    componentDidMount(){
         // an array of key value pairs
         const scripts = [{
             src: 'https://www.google.com/recaptcha/api.js',
@@ -36,7 +36,8 @@ export default class ContactForm extends React.Component {
             script.src = source.src;
             script.type = source.type;
             script.id = 'recaptcha_script';
-            var stuff = document.body.appendChild(script);
+            document.body.appendChild(script);
+            // console.log(script);
         });
     }
 
