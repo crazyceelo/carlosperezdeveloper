@@ -54,7 +54,10 @@ export default class ContactForm extends React.Component {
     }
 
     handleSubmit(event) {
+        // prevent the default button behaviour
         event.preventDefault();
+
+        // pass in form data
         console.log(`name: ${this.state.name}`);
         console.log(`email: ${this.state.email}`);
         console.log(`subject: ${this.state.subject}`);
@@ -73,25 +76,38 @@ export default class ContactForm extends React.Component {
         var captcha = grecaptcha.getResponse();
         console.log(captcha);
 
-        //Status code validation form process
+        //Status code validation form process window
         $('.form-process').css('display', 'block');
         // $('#contactstatus').css('color', '#00B4E2');
         // $('.form-process').css('background-image', 'url("assets/css/images/preloader.gif")');
         $('#contactstatus').text('Please wait, your message is being sent...');
 
-
+        // make api call to google
         $.ajax({
             url: '/api-contact',
             method: 'POST',
             data: contactData,
             success: ()=>{
+                $('.form-process').css('background-image','none');
+                $('.form-process').css('color', 'green');
+                $('#contactstatus').text('Thank you. Message successfully sent');
+                $('.form-process').fadeOut(5200);
+                // this is not clearing the fields. maybe target the field id's themselves
+                $('#contactform').reset();
                 grecaptcha.reset();
             },
             error: (response) => {
-                console.log(response.responseText);
+                $('#contactstatus').css('color', 'red');
+                $('.form-process').css('background-image','none');
+                $('#contactstatus').text(response.responseText);
+                $('.form-process').fadeOut(5200);
+                document.getElementById('contactform').reset();
+                grecaptcha.reset();
+                // console.log(response.responseText);
             }
         });
 
+        // passes it to axios and makes the data available through the '/api-contact' in AJAX
         helper.postContactForm(
             name,
             email,
@@ -109,18 +125,18 @@ export default class ContactForm extends React.Component {
                 <h2 className="section-heading h1 pt-4 whiteText">Contact me</h2>
                 {/* <!--Section description--> */}
                 <p className="section-description whiteText">Feel free to ask my any questions.</p>
-            
+
+                {/* status code form process */}
+                <div className="form-process align-items-center"><h4 id="contactstatus"></h4></div>
+
                 <div className="row">
             
                     {/* <!--Grid column--> */}
                     <div className="col-md-8 col-xl-9">
-                        <form onSubmit={this.handleSubmit} id ="contact-form" name="contact-form" action="mail.php" method="POST">
+                        <form onSubmit={this.handleSubmit} id="contact-form" name="contact-form" action="mail.php" method="POST">
             
                             {/* <!--Grid row--> */}
                             <div className="row">
-
-                                {/* status code form process */}
-                                <div className="form-process align-items-center"><h4 id="contactstatus"></h4></div>
 
                                 {/* <!--Grid column--> */}
                                 <div className="col-md-6">
