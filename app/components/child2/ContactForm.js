@@ -114,7 +114,10 @@ export default class ContactForm extends React.Component {
             
                             {/* <!--Grid row--> */}
                             <div className="row">
-            
+
+                                {/* status code form process */}
+                                <div className="form-process"><span id="contactstatus"></span></div>
+
                                 {/* <!--Grid column--> */}
                                 <div className="col-md-6">
                                     <div className="md-form">

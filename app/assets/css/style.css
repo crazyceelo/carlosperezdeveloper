@@ -74,3 +74,10 @@ body {
 .whiteText {
     color: white;
 }
+
+.form-process {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/preloader.gif") center center no-repeat #FFF;
+};
