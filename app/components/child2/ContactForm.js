@@ -93,6 +93,7 @@ export default class ContactForm extends React.Component {
                 $('#contactstatus').text('Thank you. Message successfully sent');
                 $('.form-process').fadeOut(5200);
                 // this is not clearing the fields. maybe target the field id's themselves
+                $('#name').value("");
                 $('#contactform').reset();
                 grecaptcha.reset();
             },
