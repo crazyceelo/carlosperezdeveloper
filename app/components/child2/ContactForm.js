@@ -58,10 +58,10 @@ export default class ContactForm extends React.Component {
         event.preventDefault();
 
         // pass in form data
-        console.log(`name: ${this.state.name}`);
-        console.log(`email: ${this.state.email}`);
-        console.log(`subject: ${this.state.subject}`);
-        console.log(`message: ${this.state.message}`);
+        // console.log(`name: ${this.state.name}`);
+        // console.log(`email: ${this.state.email}`);
+        // console.log(`subject: ${this.state.subject}`);
+        // console.log(`message: ${this.state.message}`);
         var contactData = {
             name: this.state.name,
             email: this.state.email,
@@ -94,7 +94,12 @@ export default class ContactForm extends React.Component {
                 $('.form-process').fadeOut(5200);
                 grecaptcha.reset();
                 // reset state to ''
-                
+                this.setState({
+                    name:'',
+                    email:'',
+                    message:'',
+                    subject:''
+                })
             },
             error: (response) => {
                 $('#contactstatus').css('color', 'red');
@@ -193,7 +198,7 @@ export default class ContactForm extends React.Component {
                             <div id="recaptcha" className="g-recaptcha" data-sitekey="6Ld73DYUAAAAAGhdKMGC38lIq9Ou7buQsp7t0dGc"></div>
                             <br />
                             <div className="center-on-small-only">
-                                <button type="submit" value="Send" className="btn btn-primary" ></button>
+                                <button type="submit" value="Send" className="btn btn-primary" > Submit </button>
                             </div>
                             <div className="status" id="status"></div>
                         </form>
