@@ -16,6 +16,7 @@ export default class ContactForm extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
     componentWillUnmount(){
@@ -53,15 +54,19 @@ export default class ContactForm extends React.Component {
         // console.log(value);
     }
 
+    resetForm(event){
+        // didn't work
+    }
+
     handleSubmit(event) {
         // prevent the default button behaviour
         event.preventDefault();
 
         // pass in form data
-        console.log(`name: ${this.state.name}`);
-        console.log(`email: ${this.state.email}`);
-        console.log(`subject: ${this.state.subject}`);
-        console.log(`message: ${this.state.message}`);
+        // console.log(`name: ${this.state.name}`);
+        // console.log(`email: ${this.state.email}`);
+        // console.log(`subject: ${this.state.subject}`);
+        // console.log(`message: ${this.state.message}`);
         var contactData = {
             name: this.state.name,
             email: this.state.email,
@@ -74,7 +79,7 @@ export default class ContactForm extends React.Component {
         var subject = this.state.subject;
         var message = this.state.message;
         var captcha = grecaptcha.getResponse();
-        console.log(captcha);
+        // console.log(captcha);
 
         //Status code validation form process window
         $('.form-process').css('display', 'block');
@@ -92,22 +97,21 @@ export default class ContactForm extends React.Component {
                 $('.form-process').css('color', 'green');
                 $('#contactstatus').text('Thank you. Message successfully sent');
                 $('.form-process').fadeOut(5200);
-                // this is not clearing the fields. maybe target the field id's themselves
-                $('#name').value("");
-                $('#contactform').reset();
                 grecaptcha.reset();
+                // reset state to ''
+                
             },
             error: (response) => {
                 $('#contactstatus').css('color', 'red');
                 $('.form-process').css('background-image','none');
                 $('#contactstatus').text(response.responseText);
                 $('.form-process').fadeOut(5200);
-                document.getElementById('contactform').reset();
                 grecaptcha.reset();
-                // console.log(response.responseText);
+                // reset state to ''
+                
             }
         });
-
+        
         // passes it to axios and makes the data available through the '/api-contact' in AJAX
         helper.postContactForm(
             name,
@@ -194,7 +198,7 @@ export default class ContactForm extends React.Component {
                             <div id="recaptcha" className="g-recaptcha" data-sitekey="6Ld73DYUAAAAAGhdKMGC38lIq9Ou7buQsp7t0dGc"></div>
                             <br />
                             <div className="center-on-small-only">
-                                <input type="submit" value="Send" className="btn btn-primary" />
+                                <button type="submit" value="Send" className="btn btn-primary" onClick={this.resetForm}></button>
                             </div>
                             <div className="status" id="status"></div>
                         </form>

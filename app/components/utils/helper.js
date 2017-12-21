@@ -9,7 +9,6 @@ export default {
             message: message
         }).then(function(response) {
             console.log(response.data);
-            // return response.data;
         });
     }
 };
