@@ -55,7 +55,7 @@ export default class ContactForm extends React.Component {
     }
 
     resetForm(event){
-        // didn't work
+        console.log('test');
     }
 
     handleSubmit(event) {
@@ -63,10 +63,10 @@ export default class ContactForm extends React.Component {
         event.preventDefault();
 
         // pass in form data
-        // console.log(`name: ${this.state.name}`);
-        // console.log(`email: ${this.state.email}`);
-        // console.log(`subject: ${this.state.subject}`);
-        // console.log(`message: ${this.state.message}`);
+        console.log(`name: ${this.state.name}`);
+        console.log(`email: ${this.state.email}`);
+        console.log(`subject: ${this.state.subject}`);
+        console.log(`message: ${this.state.message}`);
         var contactData = {
             name: this.state.name,
             email: this.state.email,
@@ -207,6 +207,5 @@ export default class ContactForm extends React.Component {
                 </div>
             </section>
         )
-        // onClick="document.getElementById('contact-form').submit();"
     };
 };
