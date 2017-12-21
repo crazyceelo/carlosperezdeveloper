@@ -78,8 +78,9 @@ export default class ContactForm extends React.Component {
 
         //Status code validation form process window
         $('.form-process').css('display', 'block');
-        // $('#contactstatus').css('color', '#00B4E2');
-        // $('.form-process').css('background-image', 'url("assets/css/images/preloader.gif")');
+        $('.form-process').css('color', 'black');
+        $('#contactstatus').css('color', '#00B4E2');
+        $('.form-process').css('background-image', 'url("assets/css/images/preloader.gif")');
         $('#contactstatus').text('Please wait, your message is being sent...');
 
         // make api call to google
