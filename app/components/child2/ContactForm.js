@@ -16,7 +16,6 @@ export default class ContactForm extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.resetForm = this.resetForm.bind(this);
     }
 
     componentWillUnmount(){
@@ -51,11 +50,7 @@ export default class ContactForm extends React.Component {
         this.setState({
             [name]: value
         });
-        // console.log(value);
-    }
-
-    resetForm(event){
-        console.log('test');
+        console.log(value);
     }
 
     handleSubmit(event) {
@@ -198,7 +193,7 @@ export default class ContactForm extends React.Component {
                             <div id="recaptcha" className="g-recaptcha" data-sitekey="6Ld73DYUAAAAAGhdKMGC38lIq9Ou7buQsp7t0dGc"></div>
                             <br />
                             <div className="center-on-small-only">
-                                <button type="submit" value="Send" className="btn btn-primary" onClick={this.resetForm}></button>
+                                <button type="submit" value="Send" className="btn btn-primary" ></button>
                             </div>
                             <div className="status" id="status"></div>
                         </form>
