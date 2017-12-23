@@ -78,9 +78,8 @@ export default class ContactForm extends React.Component {
 
         //Status code validation form process window
         $('.form-process').css('display', 'block');
-        $('.form-process').css('color', 'black');
         $('#contactstatus').css('color', '#00B4E2');
-        $('.form-process').css('background-image', 'url("assets/css/images/preloader.gif")');
+        $('#contactstatus').css('background-image', 'url("/../../assets/images/preloader.gif")');
         $('#contactstatus').text('Please wait, your message is being sent...');
 
         // make api call to google
@@ -90,9 +89,9 @@ export default class ContactForm extends React.Component {
             data: contactData,
             success: ()=>{
                 $('.form-process').css('background-image','none');
-                $('.form-process').css('color', 'green');
+                $('#contactstatus').css('color', 'green');
                 $('#contactstatus').text('Thank you. Message successfully sent');
-                $('.form-process').fadeOut(5200);
+                $('.form-process').stop().fadeOut(5200);
                 grecaptcha.reset();
                 // reset state to ''
                 this.setState({
@@ -106,7 +105,7 @@ export default class ContactForm extends React.Component {
                 $('#contactstatus').css('color', 'red');
                 $('.form-process').css('background-image','none');
                 $('#contactstatus').text(response.responseText);
-                $('.form-process').fadeOut(5200);
+                $('.form-process').stop().fadeOut(5200);
                 grecaptcha.reset();
                 // reset state to ''
                 
