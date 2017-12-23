@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 // import child components
 import Projects from "./child1/Projects";
 import AboutMe from "./child1/AboutMe";
+import ContactMe from "./child1/ContactMe";
 
 export default class Navbar extends React.Component {
 
@@ -15,6 +16,7 @@ export default class Navbar extends React.Component {
                     <div className="row">
                         <AboutMe />
                         <Projects />
+                        <ContactMe />
                     </div>
                 </div>
             </nav>
