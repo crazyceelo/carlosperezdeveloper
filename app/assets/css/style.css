@@ -77,8 +77,8 @@ body {
 
 .form-process {
     display: block;
-    width: 50%;
-    height: 50%;
+    width: 35%;
+    height: 25%;
     background: url("../images/preloader.gif") center center no-repeat #FFF;
     text-align: center;
 }
