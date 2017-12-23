@@ -70,3 +70,22 @@ body {
   list-style-type: none;
   padding-right: 20px;
 }
+
+.whiteText {
+    color: white;
+}
+
+.form-process {
+    display: block;
+    width: 35%;
+    height: 25%;
+    background: url("../images/preloader.gif") center center no-repeat #FFF;
+    text-align: center;
+}
+
+.form-process {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	background-color: rgba(255,255,255,0.7);
+}
