@@ -93,7 +93,7 @@ export default class ContactForm extends React.Component {
                 $('#contactstatus').text('Thank you. Message successfully sent');
                 $('.form-process').stop().fadeOut(5200);
                 grecaptcha.reset();
-                // reset form fields
+                // reset form fields to '';
                 this.setState({
                     name:'',
                     email:'',
